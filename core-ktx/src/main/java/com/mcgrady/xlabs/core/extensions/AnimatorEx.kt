@@ -19,7 +19,7 @@ import android.animation.Animator
 import android.animation.Animator.AnimatorListener
 
 @JvmSynthetic
-internal fun Animator.doStartAndFinish(
+fun Animator.doStartAndFinish(
     start: () -> Unit,
     finish: () -> Unit,
 ) {
