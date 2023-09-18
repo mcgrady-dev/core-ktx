@@ -15,7 +15,7 @@ fun Int.asColor(context: Context) = context.color(this)
 
 /** gets color from the ContextCompat. */
 @JvmSynthetic
-internal fun View.accentColor(): Int {
+fun View.accentColor(): Int {
     @SuppressLint("ObsoleteSdkInt", "DiscouragedApi")
     val colorAttr: Int = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
         android.R.attr.colorAccent
