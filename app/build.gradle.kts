@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.mcgrady.libs.core.sample"
+    namespace = "com.mcgrady.xlabs.core.sample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.mcgrady.libs.core.sample"
+        applicationId = "com.mcgrady.xlabs.core.sample"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
