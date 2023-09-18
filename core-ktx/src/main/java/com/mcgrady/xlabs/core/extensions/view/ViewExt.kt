@@ -28,6 +28,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import kotlin.math.min
 
 
 inline fun View.visible() {
@@ -77,5 +78,17 @@ internal fun ViewGroup.updateLayoutParams(block: ViewGroup.LayoutParams.() -> Un
             (layoutParams as ViewGroup.LayoutParams).apply { block(this) }
         layoutParams = params
     }
+}
+
+fun Int.measureSpecSize(defaultSize: Int = 0): Int {
+    var result = defaultSize
+    val specMode = View.MeasureSpec.getMode(this)
+    val specSize = View.MeasureSpec.getSize(this)
+    if (specMode == View.MeasureSpec.EXACTLY) {
+        result = specSize
+    } else if (specMode == View.MeasureSpec.AT_MOST) {
+        result = min(result, specSize)
+    }
+    return result
 }
 
